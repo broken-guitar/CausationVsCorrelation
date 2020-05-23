@@ -1,18 +1,58 @@
+html {
+  /* margin: 0 auto;
+  width: 1600px; */
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #EEF1FA;
-  font-family: 'Fira Sans', sans-serif;
-  padding-left: -40px;
+    /* background-color: #EEF1FA; */
+    font-family: 'Fira Sans', sans-serif;
+    padding-left: -40px;
+  
+  }
+  
+
+#main-container {
+  max-width: 1200px;
+  margin: 0 auto;
   background-image: url(../images/Conatiner1.png);
   background-repeat: no-repeat;
   background-position: top right;
+  /* background-size: 75%; */
 }
+
+#chart-container {
+    display: block;
+}
+
+#main-chart-div {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -50px;
+  width: 90%;
+  max-width: 600px;
+}
+
+#button-container {
+  font-size: 32px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: text-top;
+}
+
 
 .container {
   padding: -20px;
 }
 
+.header-text {
+    text-shadow: 2px 2px #ffffff;
+}
+
 h1 {
-  padding-top: 50px;
+  margin-top: 50px;
   color: #4144DB;
   text-align: right;
 }
@@ -124,7 +164,13 @@ a {
 
 #myChart {
   padding-bottom: 100px;
-  margin-left: 100px;
+  /* margin-left: 100px; */
+}
+
+#causation-div,
+#correlation-div {
+  height: 100px;
+  padding: 0px 50px;
 }
 
 #correlation,
@@ -132,10 +178,10 @@ a {
   background-color: #ED5E74;
 }
 
-/* #getstarted {
+#getstarted-button {
   background-color: #3F42DA;
-  margin-left: -97px; */
-
+  /* margin-left: -97px; */
+}
 
 .form-control {
   text-align: center;
@@ -150,7 +196,7 @@ textarea {
 
 footer {
   text-align: center;
-  background-image: url(../Images/Footer.png);
+  background-image: url(../images/Footer.png);
 }
 
 #link {

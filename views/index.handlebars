@@ -13,78 +13,79 @@
             <br>
             <br>
             <br>
-      <div class="bodycon">
-            <h3>CAUSATION VS CORRELATION</h3>
-            <h4>Cast Your Vote</h4>
-        <ul id="example-list" class="list-group">
-          {{#each data-id}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-          </li>
-          {{/each}}
-           </ul>
-          </div> 
-  <div id="poll">
-<h3>Do you think this is a correlation or causation?</h3>
-<form>
-Correlation: <input class="correlation" type="radio" name="vote" value="0" id="correlation">
-<br>
-Causation: <input class="causation" type="radio" name="vote" value="1" id="causation">
-</form>
-</div>
-         <textarea></textarea>
+            <div class="bodycon">
+                    <h3>CAUSATION VS CORRELATION</h3>
+                    <h4>Cast Your Vote</h4>
+                {{!-- <ul id="example-list" class="list-group">
+                {{#each data-id}}
+                <li data-id="{{this.id}}" class="list-group-item">
+                    <a href="example/{{this.id}}">{{this.text}}</a>
+                </li>
+                {{/each}}
+                </ul> --}}
+            </div> 
+            <div id="poll">
+                <h3>Do you think this is a correlation or causation?</h3>
+                <form>
+                    Correlation: <input class="correlation" type="radio" name="vote" value="0" id="correlation">
+                    <br>
+                    Causation: <input class="causation" type="radio" name="vote" value="1" id="causation">
+                </form>
+            </div>
+            <textarea></textarea>
             <button id="submit" class="btn btn-primary float-right">Submit</button>
           </div>
-          <div>
+          {{!-- <div> --}}
         </form>
-        </div>
-      </div>
-      </div>
-      </div>
-        </div>
+        {{!-- </div> --}}
       </div>
     </div>
-  </div>
+</div> {{!-- end of home  div ^ --}}
+
+        {{!-- </div>
+      </div>
+    </div>
+  </div> --}}
 
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
-   $.get("/api/chartdata", (data) => { 
-     var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: data.dataSet.labels2,
-        datasets: [{
-            label: '# of Votes',
-            data: data.dataSet.values2,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
+    $.get("/api/chartdata", (data) => { 
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.dataSet.labels2,
+                datasets: [{
+                    label: '# of Votes',
+                    data: data.dataSet.values2,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
-            }]
-        }
-    }
+            }
 })};
 
 

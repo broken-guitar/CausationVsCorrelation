@@ -4,10 +4,13 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-app.get("/api/chartdata", function(req, res) {
+app.get("/api/chartdata/:dataSetId", function(req, res) {
 
     db.DataNames.findAll({
-      include: [db.DataValues]
+      include: [db.DataValues],
+      where: {
+          userResId: req.params.dataSetId
+      }
     }).then(function(dbResult) {
 
         var dataSet = {};
