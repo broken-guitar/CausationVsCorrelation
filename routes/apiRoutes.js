@@ -28,7 +28,12 @@ app.get("/api/chartdata/:dataSetId", function(req, res) {
         dataSet.labels2 = dbResult[1].DataValues.map(dv => dv.x_value);
         dataSet.values2 = dbResult[1].DataValues.map(dv => dv.y_value);
 
-        res.json({data: dataSet}); // => to D3 API
+        db.sequelize.query("SELECT MAX(userresults.userResId) as maxCharts FROM userresults;")
+        .then(data =>{
+            console.log("maxCharts: ", data[0][0].maxCharts);
+            dataSet.maxCharts = data[0][0].maxCharts;
+            res.json({data: dataSet}); // => to D3 API
+        });
 
     });
   });

@@ -41,13 +41,7 @@ db.sequelize.sync(syncOptions).then(function() {
   // execute the seeds.sql script
     if (process.env.NODE_ENV === "development") {
         var sqlArray = fs.readFileSync("./db/seeds.sql", {encoding: "utf-8"}).split(";");
-        var result;
-        // for (sqlCmd of sqlArray) {
-        //      // console.log("EACH ELEMENT: ", e);
-        //    result = await db.sequelize.query(sqlCmd);
-        //    console.log("\n\nRESULT: ", result + "\n\n");
-        // }
-        
+        // async function to run each SQL command in array one at a time (waits for previous command)
         forLoop(sqlArray);
   }
   app.set('etag', false);
@@ -62,9 +56,8 @@ db.sequelize.sync(syncOptions).then(function() {
 
 module.exports = app;
 
+
 async function forLoop(array) {
-    
-  
     for (let i = 0; i < array.length; i++) {
       let sqlCmd = array[i].trim();
       let result;
@@ -74,8 +67,5 @@ async function forLoop(array) {
         console.log(result);
         console.log('\n<------\nEnd\n\n')
       }
-      
     }
-  
-    
   }

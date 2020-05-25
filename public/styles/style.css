@@ -41,7 +41,52 @@ body {
   margin-right: auto;
   vertical-align: text-top;
 }
+#causation-div,
+#correlation-div {
+  height: 100px;
+  padding: 0px 50px;
+  position: relative;
+}
 
+#correlation-button,
+#causation-button {
+  background-color: #ED5E74;
+}
+
+.corr-bar-div,
+.caus-bar-div {
+    position: relative;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 50px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(100, 181, 194);
+    z-index: 10;
+}
+#correlation-bar,
+#causation-bar {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    border-width: 0px;
+    border-style: none;
+    background-color: rgb(144, 238, 233);
+    border-radius: 1px;
+    border-width: 2px;
+    z-index: 1;
+}
+
+.vote-percentage {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
 
 .container {
   padding: -20px;
@@ -167,16 +212,6 @@ a {
   /* margin-left: 100px; */
 }
 
-#causation-div,
-#correlation-div {
-  height: 100px;
-  padding: 0px 50px;
-}
-
-#correlation-button,
-#causation-button {
-  background-color: #ED5E74;
-}
 
 #getstarted-button {
   background-color: #3F42DA;
