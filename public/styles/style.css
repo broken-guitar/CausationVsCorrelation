@@ -43,8 +43,8 @@ body {
 }
 #causation-div,
 #correlation-div {
-  height: 100px;
-  padding: 0px 50px;
+  /* height: 100px;
+  padding: 0px 10px; */
   position: relative;
 }
 

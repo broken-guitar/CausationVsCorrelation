@@ -89,8 +89,8 @@ function showVotes(corrVotes, causVotes) {
     $(".corr-bar-div").append($("<div>").addClass("vote-percentage").text(corrPerc + "%"));
     $(".caus-bar-div").append($("<div>").addClass("vote-percentage").text(causPerc + "%"));
     
-    $("#correlation-div").append($("<p>").text("Correlation"));
-    $("#causation-div").append($("<p>").text("Causation"));
+    $("#correlation-div").prepend($("<p>").text("Correlation"));
+    $("#causation-div").prepend($("<p>").text("Causation"));
     // animate vote percentage bars
     // $(".progress").each(function() {
     //     var $percent = $(this).css("width") * 0.8;

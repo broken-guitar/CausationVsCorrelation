@@ -28,7 +28,7 @@ app.get("/api/chartdata/:dataSetId", function(req, res) {
         dataSet.labels2 = dbResult[1].DataValues.map(dv => dv.x_value);
         dataSet.values2 = dbResult[1].DataValues.map(dv => dv.y_value);
 
-        db.sequelize.query("SELECT MAX(userresults.userResId) as maxCharts FROM userresults;")
+        db.sequelize.query("SELECT MAX(UserResults.userResId) as maxCharts FROM UserResults;")
         .then(data =>{
             console.log("maxCharts: ", data[0][0].maxCharts);
             dataSet.maxCharts = data[0][0].maxCharts;
